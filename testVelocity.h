@@ -547,7 +547,7 @@ private:
        v.reverse();
        
        assertEquals(v.dx, -123.456);
-       assertEquals(v.dx, 7.89);
+       assertEquals(v.dy, 7.89);
    }
 
    /*****************************************************************
@@ -751,7 +751,19 @@ private:
     *********************************************/
    void addV_stationary()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+       Velocity vLHS;
+       Velocity vRHS;
+       
+       vLHS.dx = 0.0;
+       vLHS.dy = 0.0;
+       vRHS.dx = 2.3;
+       vRHS.dy = 4.5;
+       
+       vLHS.addV(vRHS);
+       
+       assertEquals(vLHS.dx, 2.3);
+       assertEquals(vLHS.dy, 4.5);
+       
    }
 
    /*********************************************
@@ -761,7 +773,18 @@ private:
     *********************************************/
    void addV_nothing()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+       Velocity vLHS;
+       Velocity vRHS;
+       
+       vLHS.dx = 2.3;
+       vLHS.dy = 4.5;
+       vRHS.dx = 0.0;
+       vRHS.dy = 0.0;
+       
+       vLHS.addV(vRHS);
+       
+       assertEquals(vLHS.dx, 2.3);
+       assertEquals(vLHS.dy, 4.5);
    }
 
    /*********************************************
@@ -771,7 +794,18 @@ private:
     *********************************************/
    void addV_moving()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+       Velocity vLHS;
+       Velocity vRHS;
+       
+       vLHS.dx = 2.3;
+       vLHS.dy = 4.5;
+       vRHS.dx = 100.0;
+       vRHS.dy = 200.0;
+       
+       vLHS.addV(vRHS);
+       
+       assertEquals(vLHS.dx, 102.3);
+       assertEquals(vLHS.dy, 204.5);
    }
 
 };
