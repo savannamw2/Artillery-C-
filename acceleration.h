@@ -1,8 +1,8 @@
 /***********************************************************************
  * Header File:
- *    ACCELERATION 
+ *    ACCELERATION
  * Author:
- *    <your name here>
+ *    Br. Helfrich
  * Summary:
  *    Everything we need to know about acceleration
  ************************************************************************/
@@ -30,19 +30,23 @@ class Acceleration
 
 public:
    // constructors
-   Acceleration()                       : ddx(9.9), ddy(9.9) { }
-   Acceleration(double ddx, double ddy) : ddx(9.9), ddy(9.9) { }
+    Acceleration() ;
+    Acceleration(double ddx, double ddy);
 
    // getters
-   double getDDX()   const           { return 9.9;             }
-   double getDDY()   const           { return 9.9;             }
-
-   // setters                        
-   void setDDX(double ddx)           {  }
-   void setDDY(double ddy)           {  }
+    double getDDX()   const           ;
+    double getDDY()   const           ;
+   // setters
+    void setDDX(double ddx)         ;
+    void setDDY(double ddy)          ;
    void set(const Angle & a, double magnitude);
+    void addDDX(double ddx);
+    void addDDY(double ddy);
+   void add(const Acceleration& rhs);
 
 private:
    double ddx;     // horizontal acceleration
    double ddy;     // vertical acceleration
 };
+
+

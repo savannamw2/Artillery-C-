@@ -53,17 +53,17 @@ public:
     void reverse()                  ;
     Angle& add(double delta);
     void setDxDy(double dx, double dy);
-    
-    int  isLeft()      const { return isLeftPress;  };
-    int  isRight()     const { return isRightPress; };
+        
+    bool  isLeft();
+    bool  isRight();
 
 private:
-   double normalize(double radians) const;
+    double normalize(double radians) const;
     
-   double radians;
+    double radians;
     double dx;
     double dy;
-    Velocity velocity;
+    double total;
     
     static int  isLeftPress;          //    "   left       "
     static int  isRightPress;         //    "   right      "

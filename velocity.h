@@ -46,7 +46,9 @@ public:
     void set(const Angle & angle, double magnitude);
     void addDX(double dx) ;
     void addDY(double dy) ;
-   void add(const Acceleration & acceleration, double time);
+    void add(const Acceleration & acceleration, double time);
+    void reverse();
+    void addV(const Velocity &v);
 
 private:
    double dx;           // horizontal velocity
